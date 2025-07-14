@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -12,10 +12,15 @@ const fetchHeroById = async ({ queryKey }) => {
 
 export const RQSuperHeroPage = () => {
   const { heroId } = useParams();
-
+  const queryClient = useQueryClient();
   const { data, isLoading, error } = useQuery({
     queryKey: ["hero", heroId],
     queryFn: fetchHeroById,
+    initialData: () => {
+      return queryClient
+        .getQueryData(["super-heroes"])
+        ?.data?.find((hero) => hero.id === parseInt(heroId));
+    },
   });
 
   return (

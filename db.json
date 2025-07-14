@@ -20,5 +20,32 @@
       "name": "Green Lantern",
       "alterEgo": "Hal Jordan"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Robin"
+    },
+    {
+      "id": 2,
+      "name": "Wonder"
+    },
+    {
+      "id": 3,
+      "name": "Aquaman"
+    }
+  ],
+  "users": [
+    {
+      "id": "pmrjayawardena@gmail.com",
+      "courseId": "courseIdCheck"
+    }
+  ],
+  "courses": [
+    {
+      "id": "courseIdCheck",
+      "title": "React Query Course",
+      "author": "PMR Jayawardena"
+    }
   ]
 }
